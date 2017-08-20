@@ -3,10 +3,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jbehave.tutorials</groupId>
-  <artifactId>stories-java-spring</artifactId>
+  <artifactId>stories-java-edgenuity</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>Etsy.com Stories with Java and Spring</name>
-  <description>JBehave stories verifying functionality of Etsy.com using Java and Spring</description>
+  <name>Functional test for Edgenuity</name>
+  <description>JBehave stories verifying functionality of Edgenuity.com using Java and Spring</description>
 
   <properties>
     <jbehave.core.version>4.1.1</jbehave.core.version>
