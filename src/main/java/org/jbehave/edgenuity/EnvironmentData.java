@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * Created by marcelodiaz on 1/8/17.
  */
 public class EnvironmentData {
-    int env = 0;
+    int env = 1;
     String[] listOperSystem = {"Windows", "Mac", "Linux"};
     //According to each environment, must be set 0=Win, 1=Mac, 2=Linux
     String currentSO = listOperSystem[env];

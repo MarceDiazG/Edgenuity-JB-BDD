@@ -25,7 +25,9 @@
   
   <bean id="etsySteps" class="org.jbehave.edgenuity.steps.EdgenuitySteps">
      <constructor-arg ref="pageFactory"/>
-  </bean>  
-
+  </bean>
+  <bean id="commonSteps" class="org.jbehave.edgenuity.steps.CommonSteps">
+    <constructor-arg ref="pageFactory"/>
+  </bean>
 
 </beans>

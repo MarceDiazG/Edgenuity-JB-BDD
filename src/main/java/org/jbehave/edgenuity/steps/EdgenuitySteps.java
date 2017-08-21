@@ -46,7 +46,7 @@ public class EdgenuitySteps {
        // driver= env.doCreateWebDriver();
         data= env.getProperties();
 
-        homePage = pageFactory.newHomePage();
+
       //  htmlReporter = new ExtentHtmlReporter("extent.html");
       //  extent = new ExtentReports();
     }

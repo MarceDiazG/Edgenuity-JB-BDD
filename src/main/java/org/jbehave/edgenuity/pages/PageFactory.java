@@ -10,20 +10,16 @@ public class PageFactory {
         this.webDriverProvider = webDriverProvider;
     }
 
-    public HomePage newHomePage() {
-        return new HomePage(webDriverProvider);
-    }
+    public HomePage newHomePage() {                       return new HomePage(webDriverProvider);    }
     public CustomerSupportPage newCustomerSupportPage() { return new CustomerSupportPage(webDriverProvider);}
-    public ContactPage newContactPage() { return new ContactPage(webDriverProvider);     }
+    public ContactPage newContactPage() {                 return new ContactPage(webDriverProvider);     }
 
 
     public AdvancedSearch newAdvancedSearch() {
         return new AdvancedSearch(webDriverProvider);
     }
 
-    public Home newHome() {
-        return new Home(webDriverProvider);
-    }
+    public Home newHome() { return new Home(webDriverProvider);    }
 
     public Site newSite() {
         return new Site(webDriverProvider);

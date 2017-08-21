@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
  * Created by marcelodiaz on 4/8/17.
  */
 public class ContactPage extends FluentWebDriverPage{
-    WebDriverProvider webDriverProvider;
     WebElement titleContact, errorMsg;
     WebElement firstName, lastName, email, phone, jobTitle, school, district, state, zipCode, numStudents, submitButton;
 
@@ -19,7 +18,7 @@ public class ContactPage extends FluentWebDriverPage{
      */
     public ContactPage(WebDriverProvider webDriverProvider)  {
         super(webDriverProvider);
-        this.webDriverProvider= webDriverProvider;
+
         //PageFactory.initElements(driver, this);
         titleContact = findElement(By.xpath("//div[@class='container-fluid']//h1[contains(text(), 'Contact Us')]"));
         firstName=  findElement(By.name("firstname"));
