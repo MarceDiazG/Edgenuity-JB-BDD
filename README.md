@@ -1,8 +1,23 @@
 # Edgenuity JB-BDD using Java, JBehave and Spring
 
-This tutorial uses JBehave 3.x and Selenium 2.x to test [Etsy.com](http://etsy.com) (an live online shopping site).
+This tutorial uses JBehave 3.x and Selenium 2.x to test [Edgenuity](https://www.edgenuity.com/) web site.
 
 <img src="http://jbehave.org/reference/preview/images/jbehave-logo.png" alt="JBehave logo" align="right" />
+
+
+Prerequisites
+--------------
+**Java 8:** http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+
+Install components
+------------------
+**Checkout project from:** 
+https://github.com/MarceDiazG/Edgenuity-JB-BDD.git
+
+**Download the driver of your preferred browser from:**
+http://docs.seleniumhq.org/download/
+
 
 ## Running the stories
 

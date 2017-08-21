@@ -6,14 +6,10 @@ import org.jbehave.core.annotations.Composite;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
-import org.jbehave.edgenuity.pages.AdvancedSearch;
-import org.jbehave.edgenuity.pages.Buy;
-import org.jbehave.edgenuity.pages.CartContents;
-import org.jbehave.edgenuity.pages.Home;
-import org.jbehave.edgenuity.pages.PageFactory;
-import org.jbehave.edgenuity.pages.SearchResults;
-import org.jbehave.edgenuity.pages.Site;
-import org.jbehave.edgenuity.pages.Treasury;
+import org.jbehave.edgenuity.EnvironmentData;
+import org.jbehave.edgenuity.pages.*;
+
+import java.util.Properties;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -29,6 +25,13 @@ public class EdgenuitySteps {
     private Buy buy;
     private Treasury treasury;
 
+    EnvironmentData env;
+    Properties data;
+    //ExtentReports extent;
+    //ExtentHtmlReporter htmlReporter;
+    private HomePage homePage;
+
+
     private String justBought = "";
 
     public EdgenuitySteps(PageFactory pageFactory){
@@ -39,8 +42,48 @@ public class EdgenuitySteps {
         cartContents = pageFactory.newCartContents();
         buy = pageFactory.newBuy();
         treasury = pageFactory.newTreasury();
+        env= new EnvironmentData();
+       // driver= env.doCreateWebDriver();
+        data= env.getProperties();
+
+        homePage = pageFactory.newHomePage();
+      //  htmlReporter = new ExtentHtmlReporter("extent.html");
+      //  extent = new ExtentReports();
     }
-    
+
+    @Given("user $username with password $passcode is on product page $url")
+    public void loadProduct(String username, String passcode, String url) {
+        System.out.println(" >>>> This is the Given!, I'm on steps/Example");
+        //setEnvironment();
+
+        String baseURL= data.getProperty("primaryURL");
+        System.out.println("***> primaryURL: '"+baseURL+"'");
+        //driver.get(baseURL);
+        this.homePage.goToUrl(baseURL);
+    }
+
+    @When("the user clicks add to wishlist")
+    public void addToWishlist() {
+        System.out.println(" >>>> This is the When !!!!");
+        //driver.findElement(By.class("addToWishlist"));
+        //.click();
+    }
+
+    @Then("the wish list page is displayed")
+    public void isWishlistPage() {
+        //assertTrue("Wishlist page", driver.getCurrentUrl().matches(".*/gp/registry/wishlist.*"));
+        System.out.println(" >>>> This is the Then !!!!");
+    }
+
+    @Then("the product $title appears on the wish list")
+    public void checkProduct(String title) {
+        // check product entries
+        // assert if product not found
+        System.out.println(" >>>> This is the Then 222!!!!");
+        //quitDriverScenario();
+    }
+
+
     @Given("I am shopping for a $thing in $section on Etsy.com")
     public void shoppingForSomethingOnEtsyDotCom(String thing, String section) {
         home.go(section);
