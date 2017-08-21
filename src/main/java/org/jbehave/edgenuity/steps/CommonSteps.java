@@ -23,7 +23,7 @@ public class CommonSteps {
         homePage = pageFactory.newHomePage();
         EnvironmentData env= new EnvironmentData();
         data= env.getProperties();
-        //contactPage= pageFactory.newContactPage();
+        contactPage= pageFactory.newContactPage();
         //customerSupportPage= pageFactory.newCustomerSupportPage();
     }
 
