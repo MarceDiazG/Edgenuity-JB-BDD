@@ -22,18 +22,17 @@ public class CommonSteps {
     public CommonSteps(PageFactory pageFactory){
         homePage = pageFactory.newHomePage();
         EnvironmentData env= new EnvironmentData();
-        data= env.getProperties();
+        this.data= env.getProperties();
         contactPage= pageFactory.newContactPage();
         //customerSupportPage= pageFactory.newCustomerSupportPage();
     }
 
     @Given("an user that visit our landing page")
     public void goToHomePage() {
-        //"https://www.edgenuity.com/";
         String baseURL= data.getProperty("primaryURL");
-        System.out.print(" >>>> This is the Given!, and we'll load: '"+baseURL+"'");
+        System.out.print(" >>>> This is the Given!, and we'll load: '" + baseURL + "'");
+        //baseURL = "https://www.edgenuity.com/";
         homePage.goToUrl(baseURL);
-
         System.out.println("***> End of GIVEN");
     }
 
@@ -41,7 +40,7 @@ public class CommonSteps {
     public void goToContactPage() {
 
         System.out.println(" >>>> This is the When !!!!");
-        //homePage.goToContactPage();
+        homePage.goToContactPage();
 
        // System.out.print(" >>>> ContactPage is Loaded? :" + contactPage.isLoad());
 
@@ -51,7 +50,7 @@ public class CommonSteps {
     public void goToCustomerSupportPage() {
 
         System.out.println(" >>>> This is the When !!!!");
-        //homePage.goToSuppotPage();
+        homePage.goToSupportPage();
 
     }
     @Then("the support page is displayed successfully")
