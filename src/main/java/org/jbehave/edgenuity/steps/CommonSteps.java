@@ -24,7 +24,7 @@ public class CommonSteps {
         EnvironmentData env= new EnvironmentData();
         this.data= env.getProperties();
         contactPage= pageFactory.newContactPage();
-        //customerSupportPage= pageFactory.newCustomerSupportPage();
+        customerSupportPage= pageFactory.newCustomerSupportPage();
     }
 
     @Given("an user that visit our landing page")
@@ -41,8 +41,7 @@ public class CommonSteps {
 
         System.out.println(" >>>> This is the When !!!!");
         homePage.goToContactPage();
-
-       // System.out.print(" >>>> ContactPage is Loaded? :" + contactPage.isLoad());
+        //System.out.print(" >>>> ContactPage is Loaded? :" + contactPage.isLoad());
 
     }
 
@@ -51,7 +50,7 @@ public class CommonSteps {
 
         System.out.println(" >>>> This is the When !!!!");
         homePage.goToSupportPage();
-
+        System.out.println(" >>>> ContactPage is Loaded? :" + customerSupportPage.isLoad());
     }
     @Then("the support page is displayed successfully")
     public void isTheCorrectPage() {

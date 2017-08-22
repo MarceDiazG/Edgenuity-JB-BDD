@@ -2,15 +2,17 @@ package org.jbehave.edgenuity.pages;
 
 import org.jbehave.web.selenium.FluentWebDriverPage;
 import org.jbehave.web.selenium.WebDriverProvider;
-import org.openqa.selenium.WebElement;
+import org.seleniumhq.selenium.fluent.FluentWebElement;
+
+import static org.openqa.selenium.By.xpath;
 
 /**
  * Created by marcelodiaz on 4/8/17.
  */
 public class CustomerSupportPage extends FluentWebDriverPage {
 
-    private final String xpathButtonSupportForm = "//a[@href='#technical-support']/button";
-    WebElement buttonSupportForm;
+    private final String h1TechnicalCustomerSupportStr = "//h1[contains(text(), 'Technical + Customer Support')]";
+    FluentWebElement h1TechnicalCustomerSupport;
     /**
      * Method to create a new instance of HomePage
      * @param webDriverProvider
@@ -21,15 +23,21 @@ public class CustomerSupportPage extends FluentWebDriverPage {
 
     public boolean isLoad(){
         System.out.println("driver.getTitle(): '"+ getTitle()+"'");
-        return buttonSupportForm.isDisplayed();
+        try {
+            h1TechnicalCustomerSupport = h1(xpath(h1TechnicalCustomerSupportStr));
+            System.out.println("Successfully founded 'xpathButtonSupportForm'!!! ");
+            System.out.println("driver.getTitle(): '"+ getTitle()+"'");
+            return true;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
+
     }
 
     public void goToUrl(String url){
         get(url);
     }
 
-    public String getTitle() {
-        return getTitle();
-    }
 
 }

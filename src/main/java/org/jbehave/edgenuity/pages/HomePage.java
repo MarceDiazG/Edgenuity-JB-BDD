@@ -2,11 +2,8 @@ package org.jbehave.edgenuity.pages;
 
 import org.jbehave.web.selenium.FluentWebDriverPage;
 import org.jbehave.web.selenium.WebDriverProvider;
-import org.openqa.selenium.support.FindBy;
 import org.seleniumhq.selenium.fluent.FluentWebElement;
 
-import static org.openqa.selenium.By.id;
-import static org.openqa.selenium.By.linkText;
 import static org.openqa.selenium.By.xpath;
 
 /**
@@ -15,7 +12,7 @@ import static org.openqa.selenium.By.xpath;
 public class HomePage extends FluentWebDriverPage {
    // By byButtonSupport = By.xpath("//div[@id='homepage-header-contain']//div[@id='homepage-hero-content']/div/a[contains(text(), 'Support')]");
     //By byLinkContact = By.xpath("//li[@id='contact']//a");
-   @FindBy(xpath="//div[@id='homepage-header-contain']//div[@id='homepage-hero-content']/div/a[contains(text(), 'Support')]")
+
    private FluentWebElement buttonSupport ;
     /**
      * Method to create a new instance of HomePage
@@ -23,6 +20,7 @@ public class HomePage extends FluentWebDriverPage {
      */
     public HomePage(WebDriverProvider webDriverProvider){
         super(webDriverProvider);
+
     }
 
     public boolean isLoad(){
@@ -47,11 +45,10 @@ public class HomePage extends FluentWebDriverPage {
     }
     public void goToSupportPage(){
         System.out.println(" ---- ≤≤>>>  on goToSupportPage()");
-       // WebElement buttonSupport =  findElement(byButtonSupport);
+        link(xpath("//div[@id='homepage-header-contain']//div[@id='homepage-hero-content']/div/a[contains(text(), 'Support')]")).click();
 
-        //div(xpath("//div[@id='homepage-header-contain']//div[@id='homepage-hero-content']/div/a[contains(text(), 'Support')]")).click();
-        //buttonSupport.click();
         System.out.println(" ---- ≤≤>>>  on goToContactPage() Successfully");
+
     }
 
     //Our customers are always our first priority.
