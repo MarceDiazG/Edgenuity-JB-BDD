@@ -22,7 +22,6 @@ public class CustomerSupportPage extends FluentWebDriverPage {
     }
 
     public boolean isLoad(){
-        System.out.println("driver.getTitle(): '"+ getTitle()+"'");
         try {
             h1TechnicalCustomerSupport = h1(xpath(h1TechnicalCustomerSupportStr));
             System.out.println("Successfully founded 'xpathButtonSupportForm'!!! ");
@@ -32,9 +31,12 @@ public class CustomerSupportPage extends FluentWebDriverPage {
             System.out.println(e.getMessage());
             return false;
         }
-
     }
-
+    public String getTitle(){
+        String title=" ";
+        title=getTitle();
+        return title;
+    }
     public void goToUrl(String url){
         get(url);
     }

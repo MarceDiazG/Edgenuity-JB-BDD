@@ -10,6 +10,7 @@ import org.jbehave.edgenuity.pages.HomePage;
 import org.jbehave.edgenuity.pages.PageFactory;
 
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertTrue;
 
@@ -47,15 +48,15 @@ public class CommonSteps {
 
     @When("the user clicks on support button")
     public void goToCustomerSupportPage() {
-
         System.out.println(" >>>> This is the When !!!!");
         homePage.goToSupportPage();
-        System.out.println(" >>>> ContactPage is Loaded? :" + customerSupportPage.isLoad());
     }
     @Then("the support page is displayed successfully")
     public void isTheCorrectPage() {
-
-       /* assertTrue("This is not Support Page!",
+        assertTrue("In 'CustomerSupportPage' OK! ",customerSupportPage.isLoad());
+        assertTrue("This is not Support Page!",
+                "Edgenuity Inc. | Technical + Customer Support".equalsIgnoreCase(customerSupportPage.getTitle()));
+       /*assertTrue("This is not Support Page!",
                 "Edgenuity Inc. | Contact Us".equalsIgnoreCase(customerSupportPage.getTitle()));*/
         System.out.println(" >>>> This is the Then !!!!");
     }
@@ -69,13 +70,13 @@ public class CommonSteps {
                 "Edgenuity Inc. | Contact Us".equalsIgnoreCase(contactPage.getTitle(pageName)));
         assertTrue("The State validation is not working !!!",
                 contactPage.incompleteForm());*/
-/*
+
         try {
-            Thread.sleep(5000);
+            TimeUnit.SECONDS.sleep(6);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-*/
+
         System.out.println(" ");
         System.out.println("******* TC Successfully executed *********");
         System.out.println(" ");

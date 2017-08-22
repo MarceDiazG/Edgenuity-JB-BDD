@@ -2,9 +2,16 @@ package org.jbehave.edgenuity.pages;
 
 import org.jbehave.web.selenium.FluentWebDriverPage;
 import org.jbehave.web.selenium.WebDriverProvider;
+import org.openqa.selenium.By;
 import org.seleniumhq.selenium.fluent.FluentWebElement;
+import org.seleniumhq.selenium.fluent.FluentWebElements;
 
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import static org.openqa.selenium.By.className;
 import static org.openqa.selenium.By.xpath;
+import static org.seleniumhq.selenium.fluent.Period.secs;
 
 /**
  * Created by marcelodiaz on 31/7/17.
@@ -45,7 +52,18 @@ public class HomePage extends FluentWebDriverPage {
     }
     public void goToSupportPage(){
         System.out.println(" ---- ≤≤>>>  on goToSupportPage()");
-        link(xpath("//div[@id='homepage-header-contain']//div[@id='homepage-hero-content']/div/a[contains(text(), 'Support')]")).click();
+
+        FluentWebElements myArray = within(secs(2)).links(className("btn btn-orange p-x-3 m-x-2"));
+        /*for (int i=0;i<myArray.size();i++){
+        System.out.println("*** "+ i + ": "+myArray.get(i).toString());
+        }*/
+        myArray.get(1).click();
+        //System.out.println(links(xpath("//div[@id='homepage-header-contain']//div[@id='homepage-hero-content']/div/a[contains(text(), 'Support')]")).size());
+        System.out.println(links(xpath("@href = '/customer-support/'")).size());
+        //links(xpath("@href = '/customer-support/'")).get(4).click();
+
+        //links(xpath("//a[contains(text(), '/customer-support/')]")).click();
+                //div[@id='homepage-header-contain']//div[@id='homepage-hero-content']/div/a[contains(text(), 'Support')]")).click();
 
         System.out.println(" ---- ≤≤>>>  on goToContactPage() Successfully");
 
