@@ -22,7 +22,7 @@ public class ContactPage extends FluentWebDriverPage{
         super(webDriverProvider);
 /*
         //PageFactory.initElements(driver, this);
-        titleContact = div(xpath("//div[@class='container-fluid']//h1[contains(text(), 'Contact Us')]"));
+        //titleContact = div(xpath("//div[@class='container-fluid']//h1[contains(text(), 'Contact Us')]"));
         firstName=  input(name("firstname"));
         lastName =  input(name("lastname"));
         email =  input(name("email"));
@@ -33,7 +33,7 @@ public class ContactPage extends FluentWebDriverPage{
         state =  input(name("state"));
         zipCode =  input(name("zipcode"));
         numStudents=  input(name("singleLineText3"));
-        submitButton =  input(xpath("//input[@value='Submit']"));*/
+        submitButton =  input(xpath("@value='Submit'")); */
 
     }
 
@@ -45,21 +45,24 @@ public class ContactPage extends FluentWebDriverPage{
          get(url);
     }
 
-    public String getTitle(String pageName) {
-        return this.getTitle();
+    public String getTitleStr() {
+        String title;
+        title=getTitle();
+        return title;
     }
     public boolean incompleteForm(){
-        firstName.sendKeys("Administrator");
-        lastName.sendKeys("LastName");
-        email.sendKeys("email@gmail.com");
-        phone.sendKeys("158654789");
-        jobTitle.sendKeys("Daddy");
-        school.sendKeys("G. W. School");
-        district.sendKeys("Phoenix Dist.");
-        zipCode.sendKeys("85005");
-        numStudents.sendKeys("2");
 
-        submitButton.click();
+        input(name("firstname")).sendKeys("Administrator");
+        input(name("lastname")).sendKeys("LastName");
+        input(name("email")).sendKeys("email@gmail.com");
+        phone =  input(name("phone")).sendKeys("158654789");
+        jobTitle=  input(name("title")).sendKeys("Daddy");
+        school=  input(name("companyname")).sendKeys("G. W. School");
+        district= input(name("custentity89")).sendKeys("Phoenix Dist.");
+        state =  input(name("state"));
+        zipCode =  input(name("zipcode")).sendKeys("85005");
+        numStudents=  input(name("singleLineText3")).sendKeys("2");
+        submitButton =  input(xpath("@value='Submit'")).click();
 
         errorMsg =  span(xpath("//span[contains(text(), 'Please select your State')]"));
         return true; //errorMsg.isDisplayed().value();

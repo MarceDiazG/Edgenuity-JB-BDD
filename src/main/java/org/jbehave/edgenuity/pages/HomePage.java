@@ -43,21 +43,19 @@ public class HomePage extends FluentWebDriverPage {
     }
     public void goToContactPage(){
         System.out.println(" ---- ≤≤>>>  on goToContactPage()");
-       // WebElement contactLink =  findElement(byLinkContact);
-        //li(By.xpath("//li[@id='contact']//a"));
-        System.out.println(" ---- ≤≤>>>  ContactLink Founded OK !!!!");
-       // contactLink.click();
-        System.out.println(" ---- ≤≤>>>  ContactLink Clicked !!!!");
+        links(xpath("@href='/contact-us/'")).get(0).click();
+        System.out.println(" ---- ≤≤>>>  ContactLink Founded and clicked OK !!!!");
+        // contactLink.click();
         // findElement(By.xpath("//div[@class='container-fluid']//h1[contains(text(), 'Contact Us')]"));
     }
     public void goToSupportPage(){
         System.out.println(" ---- ≤≤>>>  on goToSupportPage()");
-
-        FluentWebElements myArray = within(secs(2)).links(className("btn btn-orange p-x-3 m-x-2"));
-        /*for (int i=0;i<myArray.size();i++){
-        System.out.println("*** "+ i + ": "+myArray.get(i).toString());
-        }*/
-        myArray.get(1).click();
+/*      FluentWebElements myArray = within(secs(2)).links(className("btn btn-orange p-x-3 m-x-2"));
+        //for (int i=0;i<myArray.size();i++){
+        //System.out.println("*** "+ i + ": "+myArray.get(i).toString());
+        //}
+        myArray.get(1).click();*/
+        links(className("btn btn-orange p-x-3 m-x-2")).get(1).click();
         //System.out.println(links(xpath("//div[@id='homepage-header-contain']//div[@id='homepage-hero-content']/div/a[contains(text(), 'Support')]")).size());
         System.out.println(links(xpath("@href = '/customer-support/'")).size());
         //links(xpath("@href = '/customer-support/'")).get(4).click();

@@ -39,8 +39,7 @@ public class CommonSteps {
 
     @When("the user clicks on contact link")
     public void goToContactPage() {
-
-        System.out.println(" >>>> This is the When !!!!");
+        System.out.println(" >>>> This is the When of Contact Page!!!!");
         homePage.goToContactPage();
         //System.out.print(" >>>> ContactPage is Loaded? :" + contactPage.isLoad());
 
@@ -55,9 +54,7 @@ public class CommonSteps {
     public void isTheCorrectPage() {
         assertTrue("In 'CustomerSupportPage' OK! ",customerSupportPage.isLoad());
         assertTrue("This is not Support Page!",
-                "Edgenuity Inc. | Technical + Customer Support".equalsIgnoreCase(customerSupportPage.getTitle()));
-       /*assertTrue("This is not Support Page!",
-                "Edgenuity Inc. | Contact Us".equalsIgnoreCase(customerSupportPage.getTitle()));*/
+                "Edgenuity Inc. | Technical + Customer Support".equalsIgnoreCase(customerSupportPage.getTitleStr()));
         System.out.println(" >>>> This is the Then !!!!");
     }
 
@@ -65,14 +62,13 @@ public class CommonSteps {
     public void checkTitle(String pageName) {
 
         System.out.print(" >>>> Checking Title of the Page!!!!");
-/*
         assertTrue("This is not Contact Page!",
-                "Edgenuity Inc. | Contact Us".equalsIgnoreCase(contactPage.getTitle(pageName)));
+                "Edgenuity Inc. | Contact Us".equalsIgnoreCase(contactPage.getTitleStr()));
         assertTrue("The State validation is not working !!!",
-                contactPage.incompleteForm());*/
+                contactPage.incompleteForm());
 
         try {
-            TimeUnit.SECONDS.sleep(6);
+            TimeUnit.SECONDS.sleep(16);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

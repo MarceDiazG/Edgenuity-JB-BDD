@@ -69,20 +69,6 @@ public class EdgenuitySteps {
         //.click();
     }
 
-    @Then("the wish list page is displayed")
-    public void isWishlistPage() {
-        //assertTrue("Wishlist page", driver.getCurrentUrl().matches(".*/gp/registry/wishlist.*"));
-        System.out.println(" >>>> This is the Then !!!!");
-    }
-
-    @Then("the product $title appears on the wish list")
-    public void checkProduct(String title) {
-        // check product entries
-        // assert if product not found
-        System.out.println(" >>>> This is the Then 222!!!!");
-        //quitDriverScenario();
-    }
-
 
     @Given("I am shopping for a $thing in $section on Etsy.com")
     public void shoppingForSomethingOnEtsyDotCom(String thing, String section) {

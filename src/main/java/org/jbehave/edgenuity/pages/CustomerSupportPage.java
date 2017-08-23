@@ -25,15 +25,15 @@ public class CustomerSupportPage extends FluentWebDriverPage {
         try {
             h1TechnicalCustomerSupport = h1(xpath(h1TechnicalCustomerSupportStr));
             System.out.println("Successfully founded 'xpathButtonSupportForm'!!! ");
-            System.out.println("driver.getTitle(): '"+ getTitle()+"'");
+            System.out.println("driver.getTitle(): '"+ getTitleStr()+"'");
             return true;
         }catch (Exception e){
             System.out.println(e.getMessage());
             return false;
         }
     }
-    public String getTitle(){
-        String title=" ";
+    public String getTitleStr(){
+        String title;
         title=getTitle();
         return title;
     }
